@@ -21,7 +21,7 @@
       <div class="grid-container1">
         <div class="grid-container2">
           <div class="grid-container3">
-            <h1 class="search-title">검색결과</h1>
+            <h1 class="search-title">의 검색결과</h1>
           </div>
           <div class="contents">
             <aside class="filterBar">
