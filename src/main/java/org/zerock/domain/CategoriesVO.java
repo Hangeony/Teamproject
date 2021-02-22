@@ -6,4 +6,5 @@ import lombok.Data;
 public class CategoriesVO {
 	private String name;
 	private String photourl;
+	
 }

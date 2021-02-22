@@ -16,4 +16,5 @@ public class PromotionsVO {
 	private int likes;
 	private int scores;
 	private String photourl;
+	private String continent;
 }

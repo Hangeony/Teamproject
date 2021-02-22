@@ -9,7 +9,7 @@ import org.zerock.domain.PromotionsVO;
 public interface PromotionsMapper {
 	
 	public int insert(PromotionsVO pro); //추가
-	
+
 	public PromotionsVO get(Long id); //일기
 	
 	public int update(PromotionsVO vo); //수정
