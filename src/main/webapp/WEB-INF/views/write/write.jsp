@@ -6,16 +6,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script>
+var appRoot = '${root}';
+</script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
  	<link rel="stylesheet" href="${root }/resources/assets/css/write.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/js/froala_editor.pkgd.min.js"
-    ></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/js/froala_editor.pkgd.min.js"></script>
+    <script src="${root }/resources/js/promotions.js"></script>
   </head>
   <body>
 
@@ -47,24 +47,36 @@
         </div>
         <div id="editor"></div>
         
-        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-  		<c:forEach items="${list1 }" var ="cartegories">
-    		<option>${cartegories.id }${cartegories.name }</option>
-    		</c:forEach>
-  		</select>
-        
-       <!--  <h3 class="mt-5">카테고리</h3>
-        <div id="category-area">
-          <div class="option-input-wrapper">
-            <input type="text" name="category-input" id="category-id" class="option-input" placeholder="카테고리" />
-            <i name="remove-text-input" class="fas fa-trash-alt d-none"></i>
-          </div>
-        </div>
+       <select class="custom-select" size="3" id="cartegoriesId">
+  			<option selected >카테고리</option>
+  			<c:forEach items="${list1 }" var ="cartegories">
+  			<option value="${cartegories.id }">${cartegories.name }</option>
+  			</c:forEach>
+		</select>
+		<select class="custom-select" size="3" id="largecountryId">
+  			<option selected>도시</option>
+  			<c:forEach items="${list2 }" var ="country">
+  			<option value="${country.id }">${country.largeCountry}</option>
+  			</c:forEach>
+		</select>
+		<select class="custom-select" size="3" id="countryId">
+  			<option selected>도시</option>
+  			<c:forEach items="${list2 }" var ="country">
+  			<option value="${country.id }">${country.smallCountry}</option>
+  			</c:forEach>
+		</select>
         <h3 class="mt-5">가격</h3>
         <div>
           <div class="option-input-wrapper">
             <input type="number" min="1" step="any" name="price-input" id="price-id" class="option-input"  placeholder="가격">
             원
+          </div>
+        </div>
+       <!--  <h3 class="mt-5">카테고리</h3>
+        <div id="category-area">
+          <div class="option-input-wrapper">
+            <input type="text" name="category-input" id="category-id" class="option-input" placeholder="카테고리" />
+            <i name="remove-text-input" class="fas fa-trash-alt d-none"></i>
           </div>
         </div>
         <h3 class="mt-5">지역</h3>
@@ -88,6 +100,10 @@
     </div>
     <script src="${root }/resources/js/promotions.js"></script>
     <script>
+    	var inputFile = '';
+    	$("#cartegoriesId option:selected").attr('${cartegories.id}');
+    	$("#countryId option:selected").attr('${largecountryId }');
+    	$("#countryId option:selected").attr('${country.id }');
       var previewImage = function (file) {
         var blobURL = window.URL.createObjectURL(file);
 
@@ -154,6 +170,7 @@
           $coverImage.addClass('d-none');
           $previewArea.addClass('mb-5').addClass('mt-5');
           $previewArea.html(previewImage(input.files[0]));
+          inputFile = input.files[0];
           $('#btn-remove-preview')
             .off()
             .on('click', function () {
@@ -193,17 +210,27 @@
             photourl: '',
             body: editor.html.get(),
             price: $price.val().toLocaleLowerCase(),
-            category: $('#category-id').val(),
+            category: $('#cartegoriesId').val(),
             continent: $('#continent-id').val(),
-            large_country: $('#large_country-id').val(),
-            small_country: $('#small_country-id').val(),
+            large_country: $('#largecountryId').val(),
+            small_country: $('#countryId').val(),
           };
           
+          var formData = new FormData();
+          formData.set('title', $('#textarea-title').val());
+          formData.set('body', editor.html.get());
+          formData.set('countryid', $('#countryId').val());
+          formData.set('categoriesid', $('#cartegoriesId').val());
+          formData.set('price', $price.val().toLocaleLowerCase());
+          formData.set('file', inputFile);
+          promotionsService.add2(formData);
+		/*
           promotionsService.add(body, function(result) {
         	  console.log(result)
           }, function(error) {
         	  console.error(error)
           });
+          */
           console.log(body);
         });
     </script>

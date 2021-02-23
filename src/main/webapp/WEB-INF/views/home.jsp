@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="${root }/resources/assets/css/common.css">
 <body>
 <u:navbar/>
+<img alt="" src="${staticPath }46_01. 기본 타입과 참조 타입의 차이.png">
 <main>
       <div class="main-container">
         <!-- banner list -->

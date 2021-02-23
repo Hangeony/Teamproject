@@ -6,7 +6,15 @@
 <mapper namespace="org.zerock.mapper.PromotionsMapper">
 	<insert id="insert">
 		insert into promotions (id, title, body, countryid, categoriesid,photourl,price,createdate)
-		values (seq_promotions.nextval, #{title},#{body},#{countryid},#{categoriesid}, #{photourl}, #{price},sysdate )
+		values (seq_promotions.nextval, #{title},#{body},#{countryid},#{categoriesid}, #{photourl, jdbcType=VARCHAR}, #{price},sysdate )
+	</insert>
+	
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="id" order="BEFORE" resultType="long">
+		select seq_promotions.nextval from dual
+		</selectKey>
+		insert into promotions(id, title, body, countryid, categoriesid,photourl,price,createdate)
+		values(#{id}, #{title},#{body},#{countryid},#{categoriesid}, #{photourl, jdbcType=VARCHAR}, #{price},sysdate)
 	</insert>
 	
 	<select id="read" resultType="org.zerock.domain.PromotionsVO">
@@ -15,7 +23,7 @@
 	
 	<update id="update">
 		update promotions set title = #{title}, body = #{body}, photourl = #{photourl}, price = #{price}, createdate = sysdate 
-		WHERE id = #{id}
+		WHERE id = #{id, jdbcType=NUMERIC}
 	</update>
 	
 	<delete id="delete">

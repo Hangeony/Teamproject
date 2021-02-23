@@ -20,7 +20,7 @@ public class PromotionsServiceImpl implements PromotionsService {
 	@Override
 	public int register(PromotionsVO vo) {
 		log.info("PromotionsServiceImpl register ...." + vo) ;
-		return mapper.insert(vo);
+		return mapper.insertSelectKey(vo);
 	}
 
 

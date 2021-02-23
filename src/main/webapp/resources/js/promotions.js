@@ -1,8 +1,24 @@
 var promotionsService = (function() {
 
+	function add2(formData, callback, error) {
+		$.ajax({
+	        url: appRoot + '/write/register2',
+	        type: 'POST',
+	        data: formData,
+	        async: false,
+	        cache: false,
+	        contentType: false,
+	        enctype: 'multipart/form-data',
+	        processData: false,
+	        success: function (response) {
+	          alert(response);
+	        }
+	    });
+	
+	}
+
 	function add(promotions, callback, error) {
 		console.log(promotions);
-		
 		$.ajax({
 			type: "post",
 			url: "http://localhost:8080/controller" +"/write/register",  // context root로 변경
@@ -87,6 +103,7 @@ var promotionsService = (function() {
 		getList: getList,
 		remove: remove,
 		update : update,
-		get : get
+		get : get,
+		add2: add2
 	};
 })();
