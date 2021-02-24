@@ -2,6 +2,7 @@
   pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="u" tagdir="/WEB-INF/tags"%>
 <!DOCTYPE html>
 <html>
@@ -21,20 +22,17 @@
       <div class="grid-container1">
         <div class="grid-container2">
           <div class="grid-container3">
-            <h1 class="search-title">의 검색결과</h1>
+            <h1 class="search-title"> '${param.keyword }' 검색결과</h1>
           </div>
           <div class="contents">
             <aside class="filterBar">
               <h2 class="filter-title">카테고리</h2>
               <div class="filter-content">
                 <button class="filter-btn1">
-                  <img
-                    class="filter-icon"
-                    src="https://dffoxz5he03rp.cloudfront.net/icons/ic_category_all_md_colored.svg"
-                    alt="아이콘"
-                  />
+                  <img class="filter-icon"src="https://dffoxz5he03rp.cloudfront.net/icons/ic_category_all_md_colored.svg" alt="아이콘" />
                   전체
                 </button>
+                
                 <c:forEach items="${list }" var ="cartegories">
                 <button class="filter-btn2">
                   <img
@@ -97,7 +95,7 @@
             </aside>
             <main class="main-list">
               <div class="main-header">
-                <span class="main-count">총 1,234개</span>
+                <span class="main-count">총${fn:length(seaList) }개</span>
                 <ul class="main-ul">
                   <li class="main-li">
                     <span>추천순</span>
@@ -123,58 +121,41 @@
                 <div>
                   <div>
                     <div>
+                    <c:if test="${fn:length(seaList) == 0 }">
+                	없습니다.
+                	</c:if>
+                    <c:forEach items="${seaList }" var="seaList">
                       <div class="trip-card-wrapper">
                         <a class="trip-card">
                           <div class="trip-card-thumbnail">
                             <div class="thumbnail-wrapper">
                               <div class="thumbnail">
-                                <img
-                                  alt=""
-                                  data-src="https://d2ur7st6jjikze.cloudfront.net/offer_photos/82720/541777_medium_1602579597.jpg?1602579597"
-                                  src="https://d2ur7st6jjikze.cloudfront.net/offer_photos/82720/541777_medium_1602579597.jpg?1602579597"
-                                />
+                                <!-- <img alt=""src="https://d2ur7st6jjikze.cloudfront.net/offer_photos/82720/541777_medium_1602579597.jpg?1602579597"
+                                /> -->
+                                <img alt=""src="${staticPath}${seaList.photourl}"/>
                               </div>
                             </div>
                           </div>
                           <div class="trip-card-body">
                             <div class="categorys">
-                              <div
-                                style="
-                                  text-align: start;
-                                  overflow: hidden;
-                                  text-overflow: ellipsis;
-                                  -webkit-box-orient: vertical;
-                                  display: -webkit-box;
-                                  -webkit-line-clamp: 1;
-                                  line-height: normal;
-                                "
-                              >
-                                가이드 투어 ・ 서울
+                              <div style=" text-align: start; overflow: hidden; text-overflow: ellipsis; -webkit-box-orient: vertical; display: -webkit-box;-webkit-line-clamp: 1; line-height: normal;">
+                              <!--   가이드 투어 ・ 서울 -->${seaList.name }
                               </div>
                             </div>
                             <h3 class="card-title">
-                              <div
-                                style="
-                                  text-align: start;
-                                  overflow: hidden;
-                                  text-overflow: ellipsis;
-                                  -webkit-box-orient: vertical;
-                                  display: -webkit-box;
-                                  -webkit-line-clamp: 2;
-                                  line-height: inherit;
-                                "
-                              >
-                                [입장티켓포함] 신기환 가이드의 덕수궁 야경투어
+                              <div style="text-align: start; overflow: hidden; text-overflow: ellipsis;-webkit-box-orient: vertical; display: -webkit-box; -webkit-line-clamp: 2; line-height: inherit;">
+                                <!-- [입장티켓포함] 신기환 가이드의 덕수궁 야경투어 -->${seaList.title }
                               </div>
                             </h3>
                             <div class="card-info">
                               <div class="price">
-                                <span class="origin">
+                              <!--   <span class="origin">
                                   35,000
-                                  <span style="font-size: 11px">원</span>
+                                  <span style="font-size: 11px">원</span> -->
                                 </span>
                                 <span class="sale">
-                                  24,900
+                                 <!--  24,900 -->
+                                 ${seaList.price }
                                   <span style="font-size: 13px">원</span>
                                 </span>
                                 <span class="standard">/ 1인</span>
@@ -184,11 +165,12 @@
                           <div class="trip-card-footer">
                             <div class="likes">
                               <i class="fas fa-heart"></i>
-                              <span>200</span>
+                              <span><!-- 200 -->${seaList.likes }</span>
                             </div>
                           </div>
                         </a>
                       </div>
+                    </c:forEach>
                     </div>
                   </div>
                 </div>

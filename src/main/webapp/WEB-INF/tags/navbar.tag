@@ -17,7 +17,9 @@
                     <div class="search-input">
                         <div class="search-container">
                             <i class="fas fa-search"></i>
-                            <input type="search" placeholder="도시나 상품을 검색해보세요" spellcheck="false" autocomplete="off">
+                            <form action="${root }/search/">
+                            <input name="keyword" type="search" placeholder="나라나혹은 도시를 검색해보세요" spellcheck="false" autocomplete="off">
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -54,7 +56,7 @@
                         </a>
                     </div>
                     <div class="navigation-item">
-                        <a href="#">
+                        <a href="${root }/write/write">
                             <img src="https://d2ur7st6jjikze.cloudfront.net/cms_icons/18_original_1592284955.png?1592284955" alt="ic_tour_sm">
                             <span>이벤트</span>
                         </a>

@@ -7,7 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.zerock.domain.CategoriesVO;
+import org.zerock.domain.SearchVO;
 import org.zerock.service.CategoriesService;
+import org.zerock.service.SearchService;
 
 import lombok.AllArgsConstructor;
 
@@ -15,12 +17,18 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @RequestMapping("/search/*")
 public class SearchController {
-	private CategoriesService service;
+	private CategoriesService CateService;
+	private SearchService SeaService;
 	
 	@GetMapping("/")
-	public void list(Model model) {
-		List<CategoriesVO> list = service.getList();
+	public void list(Model model, String keyword) {
+		List<CategoriesVO> list = CateService.getList();
 		model.addAttribute("list", list);
-	}
+		
+		List<SearchVO> seaList = SeaService.searchList(keyword);
+		model.addAttribute("seaList", seaList);
+		
 	
+	
+	}
 }

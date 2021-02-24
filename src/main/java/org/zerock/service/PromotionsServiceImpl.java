@@ -23,7 +23,6 @@ public class PromotionsServiceImpl implements PromotionsService {
 		return mapper.insertSelectKey(vo);
 	}
 
-
 	@Override
 	public PromotionsVO get(Long id) {
 		log.info("PromotionsServiceImpl get" + id);
