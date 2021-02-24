@@ -18,7 +18,6 @@ var appRoot = '${root}';
     <script src="${root }/resources/js/promotions.js"></script>
   </head>
   <body>
-
     <div class="write-page-header">
       <div class="header-container">
         <div class="header">
@@ -34,11 +33,29 @@ var appRoot = '${root}';
               <i class="far fa-image"></i>
               <span>사진등록</span>
             </label>
+             <label class="label-cover-photo button-transparent dropdown-category" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="btn-category">
+              <i class="fas fa-tag"></i>
+              <span>태그</span>
+              <div class="dropdown-menu" aria-labelledby="btn-category">
+                <div class="dropdown-item">Action</div>
+                <div class="dropdown-item">Another action</div>
+                <div class="dropdown-item">Something else here</div>
+              </div>
+            </label>
+            <label class="label-cover-photo button-transparent dropdown-country" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="btn-country">
+              <i class="fas fa-globe-asia"></i>
+              <span>도시-국가</span>
+              <div class="dropdown-menu" aria-labelledby="btn-country">
+                <div class="dropdown-item">Action</div>
+                <div class="dropdown-item">Another action</div>
+                <div class="dropdown-item">Something else here</div>
+              </div>
+            </label>
           </div>
           <div>
             <button class="btn btn-dark" id="register-btn" type="button">등록하기</button>
             <button class="btn btn-dark" type="button">수정하기</button>
-            <button class="btn btn-light" type="button">삭제하기</button>
+            <button class="btn btn-light" type="button" date-id="delete-btn">삭제하기</button>
           </div>
         </div>
         <div id="prevew-area"></div>
@@ -54,7 +71,7 @@ var appRoot = '${root}';
   			</c:forEach>
 		</select>
 		<select class="custom-select" size="3" id="largecountryId">
-  			<option selected>도시</option>
+  			<option selected>나라</option>
   			<c:forEach items="${list2 }" var ="country">
   			<option value="${country.id }">${country.largeCountry}</option>
   			</c:forEach>
@@ -207,7 +224,6 @@ var appRoot = '${root}';
         .on('click', function () {
           var body = {
             title: $('#textarea-title').val(),
-            photourl: '',
             body: editor.html.get(),
             price: $price.val().toLocaleLowerCase(),
             category: $('#cartegoriesId').val(),

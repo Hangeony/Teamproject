@@ -78,6 +78,7 @@ public class FileUpService {
 		// fetch the object just uploaded
 		GetObjectResponse getResponse = client.getObject(GetObjectRequest.builder().namespaceName(namespaceName)
 				.bucketName(bucketName).objectName(objectName).build());
+	
 	}
 
 	

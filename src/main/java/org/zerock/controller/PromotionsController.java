@@ -53,6 +53,8 @@ public class PromotionsController {
 		List<CountryVO> list2 = Couservice.getList();
 		model.addAttribute("list2", list2);
 	
+		log.info(list1);
+		log.info(list2);
 	}
 	
 	//추가

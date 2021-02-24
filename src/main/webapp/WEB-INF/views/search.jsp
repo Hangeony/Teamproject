@@ -9,7 +9,6 @@
 <head>
 <meta charset="UTF-8">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <link rel="stylesheet" href="${root }/resources/assets/css/reset.css">
 <link rel="stylesheet" href="${root }/resources/assets/css/style.css">
 <link rel="stylesheet" href="${root }/resources/assets/css/search.css">
@@ -124,8 +123,8 @@
                     <c:if test="${fn:length(seaList) == 0 }">
                 	없습니다.
                 	</c:if>
-                    <c:forEach items="${seaList }" var="seaList">
                       <div class="trip-card-wrapper">
+                    <c:forEach items="${seaList }" var="seaList">
                         <a class="trip-card">
                           <div class="trip-card-thumbnail">
                             <div class="thumbnail-wrapper">
@@ -169,8 +168,8 @@
                             </div>
                           </div>
                         </a>
-                      </div>
                     </c:forEach>
+                      </div>
                     </div>
                   </div>
                 </div>

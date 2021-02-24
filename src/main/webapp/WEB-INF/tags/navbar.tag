@@ -15,12 +15,10 @@
                 <!-- search -->
                 <div class="search-bar">
                     <div class="search-input">
-                        <div class="search-container">
+                        <form action="${root }/search/" class="search-container">
                             <i class="fas fa-search"></i>
-                            <form action="${root }/search/">
-                            <input name="keyword" type="search" placeholder="나라나혹은 도시를 검색해보세요" spellcheck="false" autocomplete="off">
-                            </form>
-                        </div>
+                            <input name="keyword" type="search" placeholder="나라 혹은 도시를 검색해보세요" spellcheck="false" autocomplete="off">
+                        </form>
                     </div>
                 </div>
                 <!-- search -->

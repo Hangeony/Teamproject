@@ -12,9 +12,11 @@ import org.zerock.service.CategoriesService;
 import org.zerock.service.SearchService;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j;
 
 @Controller
 @AllArgsConstructor
+@Log4j
 @RequestMapping("/search/*")
 public class SearchController {
 	private CategoriesService CateService;
@@ -27,8 +29,7 @@ public class SearchController {
 		
 		List<SearchVO> seaList = SeaService.searchList(keyword);
 		model.addAttribute("seaList", seaList);
-		
-	
+		log.info(seaList);
 	
 	}
 }
