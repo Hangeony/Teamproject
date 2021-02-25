@@ -36,20 +36,20 @@ var appRoot = '${root}';
              <label class="label-cover-photo button-transparent dropdown-category" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="btn-category">
               <i class="fas fa-tag"></i>
               <span>태그</span>
-              <div class="dropdown-menu" aria-labelledby="btn-category">
+             <!--  <div class="dropdown-menu" aria-labelledby="btn-category">
                 <div class="dropdown-item">Action</div>
                 <div class="dropdown-item">Another action</div>
                 <div class="dropdown-item">Something else here</div>
-              </div>
+              </div> -->
             </label>
             <label class="label-cover-photo button-transparent dropdown-country" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="btn-country">
               <i class="fas fa-globe-asia"></i>
               <span>도시-국가</span>
-              <div class="dropdown-menu" aria-labelledby="btn-country">
+            <!--   <div class="dropdown-menu" aria-labelledby="btn-country">
                 <div class="dropdown-item">Action</div>
                 <div class="dropdown-item">Another action</div>
                 <div class="dropdown-item">Something else here</div>
-              </div>
+              </div> -->
             </label>
           </div>
           <div>
@@ -73,15 +73,10 @@ var appRoot = '${root}';
 		<select class="custom-select" size="3" id="largecountryId">
   			<option selected>나라</option>
   			<c:forEach items="${list2 }" var ="country">
-  			<option value="${country.id }">${country.largeCountry}</option>
+  			<option value="${country.id }">${country.largeCountry} - ${country.smallCountry}</option>
   			</c:forEach>
 		</select>
-		<select class="custom-select" size="3" id="countryId">
-  			<option selected>도시</option>
-  			<c:forEach items="${list2 }" var ="country">
-  			<option value="${country.id }">${country.smallCountry}</option>
-  			</c:forEach>
-		</select>
+		
         <h3 class="mt-5">가격</h3>
         <div>
           <div class="option-input-wrapper">
@@ -89,31 +84,7 @@ var appRoot = '${root}';
             원
           </div>
         </div>
-       <!--  <h3 class="mt-5">카테고리</h3>
-        <div id="category-area">
-          <div class="option-input-wrapper">
-            <input type="text" name="category-input" id="category-id" class="option-input" placeholder="카테고리" />
-            <i name="remove-text-input" class="fas fa-trash-alt d-none"></i>
-          </div>
-        </div>
-        <h3 class="mt-5">지역</h3>
-        <div id="contury-area" class="d-flex">
-          <div class="option-input-wrapper">
-            <input type="text" name="country-input" id="continent-id" class="option-input" placeholder="대륙" />
-            <i name="remove-text-input" class="fas fa-trash-alt d-none"></i>
-          </div>
-
-          <div class="option-input-wrapper">
-            <input type="text" name="country-input" id="large_country-id" class="option-input" placeholder="국가" />
-            <i name="remove-text-input" class="fas fa-trash-alt d-none"></i>
-          </div>
-
-          <div class="option-input-wrapper">
-            <input type="text" name="country-input" id="small_country-id" class="option-input"  placeholder="도시" />
-            <i name="remove-text-input" class="fas fa-trash-alt d-none"></i>
-          </div>
-        </div>
-      </div> -->
+       
     </div>
     <script src="${root }/resources/js/promotions.js"></script>
     <script>
@@ -123,7 +94,6 @@ var appRoot = '${root}';
     	$("#countryId option:selected").attr('${country.id }');
       var previewImage = function (file) {
         var blobURL = window.URL.createObjectURL(file);
-
         return (
           '<div class="mb-5">' +
           '  <div class="post-cover"' +
@@ -137,7 +107,6 @@ var appRoot = '${root}';
           '</div>'
         );
       };
-
       var editor = new FroalaEditor('#editor', {
         placeholderText: '내용을 작성해주세요.',
         iconsTemplate: 'font_awesome_5',
@@ -171,7 +140,6 @@ var appRoot = '${root}';
           },
         },
       });
-
       var $previewArea = $('#prevew-area');
       var $coverImage = $('#btn-cover-image');
       var $removeTextInput = $('[name=remove-text-input]');
@@ -179,7 +147,6 @@ var appRoot = '${root}';
       var $category = $('[name=category-input]');
       var $price = $('[name=price-input]');
       var $btnBack = $('#btn-back');
-
       $coverImage.off().on('click', function (event) {
         var input = document.createElement('input');
         input.type = 'file';
@@ -198,7 +165,6 @@ var appRoot = '${root}';
         };
         input.click();
       });
-
       function onKeyup(event) {
         if (event.currentTarget.value && event.currentTarget.value.length) {
           event.currentTarget.nextElementSibling.classList.remove('d-none');
@@ -206,19 +172,16 @@ var appRoot = '${root}';
         }
         event.currentTarget.nextElementSibling.classList.add('d-none');
       }
-
       function onClick(event) {
         event.currentTarget.previousElementSibling.value = '';
         event.currentTarget.classList.add('d-none');
       }
-
       $btnBack.off().on('click', function () {
         history.back();
       });
       $removeTextInput.off().on('click', onClick);
       $category.off().on('keyup', onKeyup);
       $country.off().on('keyup', onKeyup);
-
       $('#register-btn')
         .off()
         .on('click', function () {
@@ -235,7 +198,7 @@ var appRoot = '${root}';
           var formData = new FormData();
           formData.set('title', $('#textarea-title').val());
           formData.set('body', editor.html.get());
-          formData.set('countryid', $('#countryId').val());
+          formData.set('countryid', $('#largecountryId').val());
           formData.set('categoriesid', $('#cartegoriesId').val());
           formData.set('price', $price.val().toLocaleLowerCase());
           formData.set('file', inputFile);
@@ -247,6 +210,12 @@ var appRoot = '${root}';
         	  console.error(error)
           });
           */
+          console.log(formData.get('title'));
+          console.log(formData.get('body'));
+          console.log(formData.get('countryid'));
+          console.log(formData.get('categoriesid'));
+          console.log(formData.get('price'));
+          console.log(formData.get('file'));
           console.log(body);
         });
     </script>

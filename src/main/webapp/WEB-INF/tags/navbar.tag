@@ -42,13 +42,13 @@
             <nav class="header-navigation-container">
                 <div class="header-navigation-wrapper navigation-inner">
                     <div class="navigation-item">
-                        <a href="#">
+                        <a href="${root }/resources/view/ari-line.jsp">
                             <img src="https://d2ur7st6jjikze.cloudfront.net/cms_icons/49_original_1608700445.png?1608700445" alt="ic_flight_40x40">
                             <span>항공권</span>
                         </a>
                     </div>
                     <div class="navigation-item">
-                        <a href="#">
+                        <a href="${root }/resources/view/hotel.jsp">
                             <img src="https://d2ur7st6jjikze.cloudfront.net/cms_icons/50_original_1608701561.png?1608701561" alt="ic_bnb_40x40">
                             <span>숙소</span>
                         </a>

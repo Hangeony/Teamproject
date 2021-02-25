@@ -29,7 +29,6 @@ public class SearchController {
 		
 		List<SearchVO> seaList = SeaService.searchList(keyword);
 		model.addAttribute("seaList", seaList);
-		log.info(seaList);
 	
 	}
 }

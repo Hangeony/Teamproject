@@ -15,7 +15,6 @@
 <link rel="stylesheet" href="${root }/resources/assets/css/common.css">
 <body>
 <u:navbar/>
-<%-- <img alt="" src="${staticPath }46_01. 기본 타입과 참조 타입의 차이.png"> --%>
 
 <main>
       <div class="main-container">
@@ -25,7 +24,7 @@
           <div class="head-title">
             <div class="wrapper grid">
               <h2>어디로 떠나세요?</h2>
-              <a class="all-views-country" href="#">
+              <a class="all-views-country" href="${root }/resources/view/regions.jsp">
                 <img src="https://dffoxz5he03rp.cloudfront.net/icons/ic_all_md_blue_500.svg" alt="ic_all_md_blue_500" />
                 <span>전체보기</span>
               </a>
@@ -50,9 +49,8 @@
                         <div class="title">
                           <span>푼타 카나</span>
                         </div>
-                        <span class="description"
-                          ><span
-                            style="
+                       <!-- <span class="description">
+                   			 <span style="
                               overflow: hidden;
                               text-overflow: ellipsis;
                               -webkit-box-orient: vertical;
@@ -60,10 +58,9 @@
                               -webkit-line-clamp: 2;
                             "
                             >10여 개의 여행 상품</span
-                          ></span
-                        >
+                          ></span> -->
                       </div>
-                      <a class="city-page-btn" href="/#">둘러보기</a>
+                     <!--  <a class="city-page-btn" href="/#">둘러보기</a> -->
                     </div>
                     <div class="swiper-slide swiper-card-country">
                       <img
@@ -76,7 +73,7 @@
                         <div class="title">
                           <span>서울</span>
                         </div>
-                        <span class="description"
+                        <!-- <span class="description"
                           ><span
                             style="
                               overflow: hidden;
@@ -87,9 +84,9 @@
                             "
                             >900여 개의 여행 상품</span
                           ></span
-                        >
+                        > -->
                       </div>
-                      <a class="city-page-btn" href="/#">둘러보기</a>
+                      <!-- <a class="city-page-btn" href="/#">둘러보기</a> -->
                     </div>
                     <div class="swiper-slide swiper-card-country">
                       <img
@@ -102,7 +99,7 @@
                         <div class="title">
                           <span>제주도</span>
                         </div>
-                        <span class="description"
+                        <!-- <span class="description"
                           ><span
                             style="
                               overflow: hidden;
@@ -113,9 +110,9 @@
                             "
                             >2,660여 개의 여행 상품</span
                           ></span
-                        >
+                        > -->
                       </div>
-                      <a class="city-page-btn" href="/#">둘러보기</a>
+                    <!--   <a class="city-page-btn" href="/#">둘러보기</a> -->
                     </div>
                     <div class="swiper-slide swiper-card-country">
                       <img
@@ -128,7 +125,7 @@
                         <div class="title">
                           <span>경기도</span>
                         </div>
-                        <span class="description"
+                        <!-- <span class="description"
                           ><span
                             style="
                               overflow: hidden;
@@ -139,9 +136,9 @@
                             "
                             >2,120여 개의 여행 상품</span
                           ></span
-                        >
+                        > -->
                       </div>
-                      <a class="city-page-btn" href="/#">둘러보기</a>
+                      <!-- <a class="city-page-btn" href="/#">둘러보기</a> -->
                     </div>
                     <div class="swiper-slide swiper-card-country">
                       <img
@@ -154,7 +151,7 @@
                         <div class="title">
                           <span>경상도</span>
                         </div>
-                        <span class="description"
+                        <!-- <span class="description"
                           ><span
                             style="
                               overflow: hidden;
@@ -165,9 +162,9 @@
                             "
                             >2,420여 개의 여행 상품</span
                           ></span
-                        >
+                        > -->
                       </div>
-                      <a class="city-page-btn" href="/#">둘러보기</a>
+                      <!-- <a class="city-page-btn" href="/#">둘러보기</a> -->
                     </div>
                     <div class="swiper-slide swiper-card-country">
                       <img
@@ -180,7 +177,7 @@
                         <div class="title">
                           <span>경주</span>
                         </div>
-                        <span class="description"
+                        <!-- <span class="description"
                           ><span
                             style="
                               overflow: hidden;
@@ -191,9 +188,9 @@
                             "
                             >90여 개의 여행 상품</span
                           ></span
-                        >
+                        > -->
                       </div>
-                      <a class="city-page-btn" href="/#">둘러보기</a>
+                      <!-- <a class="city-page-btn" href="/#">둘러보기</a> -->
                     </div>
                     <div class="swiper-slide swiper-card-country">
                       <img
@@ -206,7 +203,7 @@
                         <div class="title">
                           <span>수원</span>
                         </div>
-                        <span class="description"
+                        <!-- <span class="description"
                           ><span
                             style="
                               overflow: hidden;
@@ -217,9 +214,9 @@
                             "
                             >30여 개의 여행 상품</span
                           ></span
-                        >
+                        > -->
                       </div>
-                      <a class="city-page-btn" href="/#">둘러보기</a>
+                      <!-- <a class="city-page-btn" href="/#">둘러보기</a> -->
                     </div>
                     <div class="swiper-slide swiper-card-country">
                       <img
@@ -232,7 +229,7 @@
                         <div class="title">
                           <span>김포</span>
                         </div>
-                        <span class="description"
+                        <!-- <span class="description"
                           ><span
                             style="
                               overflow: hidden;
@@ -243,9 +240,9 @@
                             "
                             >10여 개의 여행 상품</span
                           ></span
-                        >
+                        > -->
                       </div>
-                      <a class="city-page-btn" href="/#">둘러보기</a>
+                      <!-- <a class="city-page-btn" href="/#">둘러보기</a> -->
                     </div>
                   </div>
 
@@ -261,291 +258,38 @@
         </section>
         <!-- banner list -->
       </div>
-
-      <!-- card list -->
-      <div class="main-offer-container">
-        <div class="main-offer-title-container">
-          <div class="offer-title">
-            <header>
-              <div>
-                <h2>최근 본 상품</h2>
-              </div>
-            </header>
-          </div>
+      
+       <!-- 홈 스와이퍼 -->
+    <div class="swiper-container newSwiper-container" style="width: 1100px; height: 280px; position: relative;">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="width: 1060px;">
+          <img class="swiper-slide"
+            src="https://d2ur7st6jjikze.cloudfront.net/cms/1560_original_1613723748.jpg?1613723748">
         </div>
-        <div class="main-offer-content-container">
-          <div class="offer-content">
-            <div class="wrapper">
-              <div class="trip-card-wrapper">
-                <a class="trip-card">
-                  <div class="trip-card-thumbnail">
-                    <div class="thumbnail-wrapper">
-                      <div class="thumbnail">
-                        <img
-                          alt=""
-                          data-src="https://d2ur7st6jjikze.cloudfront.net/offer_photos/82720/541777_medium_1602579597.jpg?1602579597"
-                          src="https://d2ur7st6jjikze.cloudfront.net/offer_photos/82720/541777_medium_1602579597.jpg?1602579597"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="trip-card-body">
-                    <div class="categorys">
-                      <div style=" text-align: start;
-                          overflow: hidden;
-                          text-overflow: ellipsis;
-                          -webkit-box-orient: vertical;
-                          display: -webkit-box;
-                          -webkit-line-clamp: 1;
-                          line-height: normal;
-                        "
-                      >
-                        가이드 투어 ・ 서울
-                      </div>
-                    </div>
-                    <h3 class="card-title">
-                      <div
-                        style="
-                          text-align: start;
-                          overflow: hidden;
-                          text-overflow: ellipsis;
-                          -webkit-box-orient: vertical;
-                          display: -webkit-box;
-                          -webkit-line-clamp: 2;
-                          line-height: inherit;
-                        "
-                      >
-                        [입장티켓포함] 신기환 가이드의 덕수궁 야경투어
-                      </div>
-                    </h3>
-                    <div class="card-info">
-                      <div class="price">
-                        <span class="origin">
-                          35,000
-                          <span style="font-size: 11px">원</span>
-                        </span>
-                        <span class="sale">
-                          24,900
-                          <span style="font-size: 13px">원</span>
-                        </span>
-                        <span class="standard">/ 1인</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="trip-card-footer">
-                    <div class="likes">
-                      <i class="fas fa-heart"></i>
-                      <span>200</span>
-                    </div>
-                  </div>
-                </a>
 
-                <a class="trip-card">
-                  <div class="trip-card-thumbnail">
-                    <div class="thumbnail-wrapper">
-                      <div class="thumbnail">
-                        <img
-                          alt=""
-                          data-src="https://d2ur7st6jjikze.cloudfront.net/offer_photos/82720/541777_medium_1602579597.jpg?1602579597"
-                          src="https://d2ur7st6jjikze.cloudfront.net/offer_photos/82720/541777_medium_1602579597.jpg?1602579597"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="trip-card-body">
-                    <div class="categorys">
-                      <div
-                        style="
-                          text-align: start;
-                          overflow: hidden;
-                          text-overflow: ellipsis;
-                          -webkit-box-orient: vertical;
-                          display: -webkit-box;
-                          -webkit-line-clamp: 1;
-                          line-height: normal;
-                        "
-                      >
-                        가이드 투어 ・ 서울
-                      </div>
-                    </div>
-                    <h3 class="card-title">
-                      <div
-                        style="
-                          text-align: start;
-                          overflow: hidden;
-                          text-overflow: ellipsis;
-                          -webkit-box-orient: vertical;
-                          display: -webkit-box;
-                          -webkit-line-clamp: 2;
-                          line-height: inherit;
-                        "
-                      >
-                        [입장티켓포함] 신기환 가이드의 덕수궁 야경투어
-                      </div>
-                    </h3>
-                    <div class="card-info">
-                      <div class="price">
-                        <span class="origin">
-                          35,000
-                          <span style="font-size: 11px">원</span>
-                        </span>
-                        <span class="sale">
-                          24,900
-                          <span style="font-size: 13px">원</span>
-                        </span>
-                        <span class="standard">/ 1인</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="trip-card-footer">
-                    <div class="likes">
-                      <i class="fas fa-heart"></i>
-                      <span>200</span>
-                    </div>
-                  </div>
-                </a>
-
-                <a class="trip-card">
-                  <div class="trip-card-thumbnail">
-                    <div class="thumbnail-wrapper">
-                      <div class="thumbnail">
-                        <img
-                          alt=""
-                          data-src="https://d2ur7st6jjikze.cloudfront.net/offer_photos/82720/541777_medium_1602579597.jpg?1602579597"
-                          src="https://d2ur7st6jjikze.cloudfront.net/offer_photos/82720/541777_medium_1602579597.jpg?1602579597"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="trip-card-body">
-                    <div class="categorys">
-                      <div
-                        style="
-                          text-align: start;
-                          overflow: hidden;
-                          text-overflow: ellipsis;
-                          -webkit-box-orient: vertical;
-                          display: -webkit-box;
-                          -webkit-line-clamp: 1;
-                          line-height: normal;
-                        "
-                      >
-                        가이드 투어 ・ 서울
-                      </div>
-                    </div>
-                    <h3 class="card-title">
-                      <div
-                        style="
-                          text-align: start;
-                          overflow: hidden;
-                          text-overflow: ellipsis;
-                          -webkit-box-orient: vertical;
-                          display: -webkit-box;
-                          -webkit-line-clamp: 2;
-                          line-height: inherit;
-                        "
-                      >
-                        [입장티켓포함] 신기환 가이드의 덕수궁 야경투어
-                      </div>
-                    </h3>
-                    <div class="card-info">
-                      <div class="price">
-                        <span class="origin">
-                          35,000
-                          <span style="font-size: 11px">원</span>
-                        </span>
-                        <span class="sale">
-                          24,900
-                          <span style="font-size: 13px">원</span>
-                        </span>
-                        <span class="standard">/ 1인</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="trip-card-footer">
-                    <div class="likes">
-                      <i class="fas fa-heart"></i>
-                      <span>200</span>
-                    </div>
-                  </div>
-                </a>
-
-                <a class="trip-card">
-                  <div class="trip-card-thumbnail">
-                    <div class="thumbnail-wrapper">
-                      <div class="thumbnail">
-                        <img
-                          alt=""
-                          data-src="https://d2ur7st6jjikze.cloudfront.net/offer_photos/82720/541777_medium_1602579597.jpg?1602579597"
-                          src="https://d2ur7st6jjikze.cloudfront.net/offer_photos/82720/541777_medium_1602579597.jpg?1602579597"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="trip-card-body">
-                    <div class="categorys">
-                      <div
-                        style="
-                          text-align: start;
-                          overflow: hidden;
-                          text-overflow: ellipsis;
-                          -webkit-box-orient: vertical;
-                          display: -webkit-box;
-                          -webkit-line-clamp: 1;
-                          line-height: normal;
-                        "
-                      >
-                        가이드 투어 ・ 서울
-                      </div>
-                    </div>
-                    <h3 class="card-title">
-                      <div
-                        style="
-                          text-align: start;
-                          overflow: hidden;
-                          text-overflow: ellipsis;
-                          -webkit-box-orient: vertical;
-                          display: -webkit-box;
-                          -webkit-line-clamp: 2;
-                          line-height: inherit;
-                        "
-                      >
-                        [입장티켓포함] 신기환 가이드의 덕수궁 야경투어
-                      </div>
-                    </h3>
-                    <div class="card-info">
-                      <div class="price">
-                        <span class="origin">
-                          35,000
-                          <span style="font-size: 11px">원</span>
-                        </span>
-                        <span class="sale">
-                          24,900
-                          <span style="font-size: 13px">원</span>
-                        </span>
-                        <span class="standard">/ 1인</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="trip-card-footer">
-                    <div class="likes">
-                      <i class="fas fa-heart"></i>
-                      <span>200</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
+        <div class="swiper-slide">
+          <img class="swiper-slide"
+            src="https://d2ur7st6jjikze.cloudfront.net/cms/1389_original_1597911550.png?1597911550">
         </div>
+        <div class="swiper-slide">
+          <img class="swiper-slide"
+            src="https://d2ur7st6jjikze.cloudfront.net/cms/478_original_1577953842.jpg?1577953842"">
+              </div>
+              <div class=" swiper-slide">
+          <img class="swiper-slide"
+            src="https://d2ur7st6jjikze.cloudfront.net/cms/642_original_1601029566.jpg?1601029566">
+        </div>
+        <div class="swiper-pagination"></div>
       </div>
-      <!-- card list -->
+    </div>
+    <!-- 홈 스와이퍼 -->
+    
       <div class="main-offer-container">
         <div class="main-offer-title-container">
           <div class="offer-title">
             <header>
               <div>
-                <h2>방구석 랜선투어 💻</h2>
+                <h2>전국 핫플 최저가 🎠</h2>
               </div>
             </header>
           </div>
@@ -827,6 +571,29 @@
           prevEl: '.swiper-button-prev',
         },
       });
+      
+      var swiper = new Swiper('.newSwiper-container', {
+          spaceBetween: 20,
+          centeredSides: true,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+          loopFillGroupWithBlank: true,
+          loop: true,
+          //pagenation
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          //Navigation arrows
+          navigation: {
+            nextEl: '.swiper-button-next',
+            preEl: '.swiper-button-prev',
+          },
+        });
     </script>
 </body>
 </html>
